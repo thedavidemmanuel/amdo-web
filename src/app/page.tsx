@@ -1,35 +1,13 @@
 'use client';
 
-import { useState, useEffect } from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 import { ArrowUpRight } from 'lucide-react';
 import { ContactForm } from '@/components/ContactForm';
-
-interface AnimatedNumberProps {
-  value: string;
-}
-
-function AnimatedNumber({ value }: AnimatedNumberProps) {
-  const [count, setCount] = useState(0);
-
-  useEffect(() => {
-    let start = 0;
-    const end = parseInt(value.replace(/,/g, ''));
-    const duration = 2000;
-    const timer = setInterval(() => {
-      start += end / (duration / 16);
-      setCount(Math.floor(start));
-      if (start >= end) clearInterval(timer);
-    }, 16);
-
-    return () => clearInterval(timer);
-  }, [value]);
-
-  return <span>{count.toLocaleString()}</span>;
-}
+import Hero from '@/components/Hero';
+import Stats from '@/components/Stats';
 
 interface WorkCardProps {
   icon: string;
@@ -113,187 +91,13 @@ export default function HomePage() {
     }
   ];
 
-
   return (
     <div className="min-h-screen bg-white">
-      <style jsx global>{`
-        @keyframes float {
-          0%, 100% { transform: translateY(0); }
-          50% { transform: translateY(-10px); }
-        }
-        .float-animation {
-          animation: float 3s ease-in-out infinite;
-        }
-      `}</style>
-
       <Header />
+      <Hero />
 
-      <main className="container mx-auto px-4 py-12 relative">
-        <div className="flex flex-col lg:flex-row">
-        <div className="lg:w-1/2 pr-12 mt-39">
-        <h1 className="text-5xl font-medium mb-6 leading-tight text-black">
-          <span className="block">Building For</span>
-          <span className="block font-bold mt-2">Everyone</span>
-        </h1>
-        <p className="text-base text-black mb-8 max-w-[500px]">
-          Empowering our community by developing its people, creating opportunities, and building lasting solutions that uplift every individual. Together, we shape a future where no one is left behind.
-        </p>
-        <div className="space-x-4">
-          <Link href="#" className="bg-white text-black px-6 py-3 rounded-lg border border-black text-xxl font-normal hover:bg-gray-100 transition-colors duration-300">
-            Learn More
-          </Link>
-          <Link href="#" className="bg-[#2B9348] text-white px-6 py-3 rounded-lg text-xl font-normal hover:bg-[#228B22] transition-colors duration-300">
-            Donate
-          </Link>
-        </div>
-      </div>
-
-          {/* Desktop Layout - Absolute Positioning */}
-          <div className="hidden lg:block w-1/2 absolute right-0 top-12 h-[700px]">
-            <Image 
-              src="https://res.cloudinary.com/djt0sncef/image/upload/v1742629608/hero-image-1_gje7xv.png"
-              alt="Community member 1"
-              width={250}
-              height={250}
-              className="absolute rounded-full object-cover float-animation"
-              style={{ left: '0px', top: '0px', animationDelay: '0s' }}
-            />
-            <Image 
-              src="https://res.cloudinary.com/djt0sncef/image/upload/v1742629607/hero-image-2_clh3ab.png"
-              alt="Community member 2"
-              width={200}
-              height={200}
-              className="absolute rounded-full object-cover float-animation"
-              style={{ left: '263px', top: '-36px', animationDelay: '0.5s' }}
-            />
-            <Image 
-              src="https://res.cloudinary.com/djt0sncef/image/upload/v1742629608/hero-image-3_dffvi8.png"
-              alt="Community member 3"
-              width={200}
-              height={200}
-              className="absolute rounded-full object-cover float-animation"
-              style={{ left: '406px', top: '150px', animationDelay: '1s' }}
-            />
-            <Image 
-              src="https://res.cloudinary.com/djt0sncef/image/upload/v1742629608/hero-image-4_aqciwx.png"
-              alt="Community member 4"
-              width={250}
-              height={250}
-              className="absolute rounded-full object-cover float-animation"
-              style={{ left: '118px', top: '237px', animationDelay: '1.5s' }}
-            />
-          </div>
-
-          {/* Mobile/Tablet Layout - Grid */}
-          <div className="lg:hidden w-full mt-12 relative flex flex-wrap justify-center">
-            <div className="w-1/2 p-1">
-              <Image 
-                src="https://res.cloudinary.com/djt0sncef/image/upload/v1742629608/hero-image-1_gje7xv.png"
-                alt="Community member 1"
-                width={150}
-                height={150}
-                className="rounded-full object-cover float-animation"
-                style={{ animationDelay: '0s' }}
-              />
-            </div>
-            <div className="w-1/2 p-1">
-              <Image 
-                src="https://res.cloudinary.com/djt0sncef/image/upload/v1742629607/hero-image-2_clh3ab.png"
-                alt="Community member 2"
-                width={180}
-                height={180}
-                className="rounded-full object-cover float-animation"
-                style={{ animationDelay: '0.5s' }}
-              />
-            </div>
-            <div className="w-1/2 p-1">
-              <Image 
-                src="https://res.cloudinary.com/djt0sncef/image/upload/v1742629608/hero-image-3_dffvi8.png"
-                alt="Community member 3"
-                width={180}
-                height={180}
-                className="rounded-full object-cover float-animation"
-                style={{ animationDelay: '1s' }}
-              />
-            </div>
-            <div className="w-1/2 p-1">
-              <Image 
-                src="https://res.cloudinary.com/djt0sncef/image/upload/v1742629608/hero-image-4_aqciwx.png"
-                alt="Community member 4"
-                width={150}
-                height={150}
-                className="rounded-full object-cover float-animation"
-                style={{ animationDelay: '1.5s' }}
-              />
-            </div>
-          </div>
-        </div>
-      </main>
-
-    {/* Stats Section */}
-    <div className="container mx-auto px-4 mt-12 lg:mt-64 mb-20">
-        <div className="md:flex md:flex-row justify-between items-center bg-white max-w-5xl mx-auto">
-          {/* Mobile Layout - First Row */}
-          <div className="grid grid-cols-3 gap-2 items-center mb-8 md:hidden">
-            <div className="flex flex-col items-center p-4 col-span-1">
-              <p className="text-3xl font-medium mb-2 text-black">₦<AnimatedNumber value="500000" />+</p>
-              <p className="text-lg text-[#4B4B4B]">Fund Raised</p>
-            </div>
-            
-            <div className="w-3 h-3 bg-[#F9A602] rounded-full justify-self-center"></div>
-            
-            <div className="flex flex-col items-center p-4 col-span-1">
-              <p className="text-3xl font-medium mb-2 text-black"><AnimatedNumber value="50" />+</p>
-              <p className="text-lg text-[#4B4B4B]">Volunteers</p>
-            </div>
-          </div>
-
-          {/* Mobile Layout - Second Row */}
-          <div className="grid grid-cols-3 gap-2 items-center md:hidden">
-            <div className="flex flex-col items-center p-4 col-span-1">
-              <p className="text-3xl font-medium mb-2 text-black"><AnimatedNumber value="100" /></p>
-              <p className="text-lg text-[#4B4B4B]">Scholarships</p>
-            </div>
-            
-            <div className="w-3 h-3 bg-[#F9A602] rounded-full justify-self-center"></div>
-            
-            <div className="flex flex-col items-center p-4 col-span-1">
-              <p className="text-3xl font-medium mb-2 text-black"><AnimatedNumber value="24" /></p>
-              <p className="text-lg text-[#4B4B4B]">Workshops</p>
-            </div>
-          </div>
-
-          {/* Desktop Layout */}
-          <div className="hidden md:flex md:flex-row md:justify-between md:items-center md:w-full">
-            <div className="flex flex-col items-center p-4">
-              <p className="text-3xl font-medium mb-2 text-black">₦<AnimatedNumber value="500000" />+</p>
-              <p className="text-lg text-[#4B4B4B]">Fund Raised</p>
-            </div>
-
-            <div className="w-3 h-3 bg-[#F9A602] rounded-full"></div>
-            
-            <div className="flex flex-col items-center p-4">
-              <p className="text-3xl font-medium mb-2 text-black"><AnimatedNumber value="50" />+</p>
-              <p className="text-lg text-[#4B4B4B]">Volunteers</p>
-            </div>
-
-            <div className="w-3 h-3 bg-[#F9A602] rounded-full"></div>
-            
-            <div className="flex flex-col items-center p-4">
-              <p className="text-3xl font-medium mb-2 text-black"><AnimatedNumber value="100" /></p>
-              <p className="text-lg text-[#4B4B4B]">Scholarships</p>
-            </div>
-
-            <div className="w-3 h-3 bg-[#F9A602] rounded-full"></div>
-            
-            <div className="flex flex-col items-center p-4">
-              <p className="text-3xl font-medium mb-2 text-black"><AnimatedNumber value="24" /></p>
-              <p className="text-lg text-[#4B4B4B]">Workshops</p>
-            </div>
-          </div>
-        </div>
-      </div>
-
+      {/* Stats Section */}
+      <Stats />
 
       <section className="container mx-auto px-4 py-16">
         <div className="flex flex-col lg:flex-row items-center">

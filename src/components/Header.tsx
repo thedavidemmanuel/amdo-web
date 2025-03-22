@@ -1,6 +1,6 @@
 'use client';
 
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
 import { Menu, X } from 'lucide-react';
@@ -14,6 +14,15 @@ interface NavItem {
 
 export default function Header(): React.ReactElement {
   const [isMenuOpen, setIsMenuOpen] = useState<boolean>(false);
+  
+  // Add effect to log when this component mounts
+  useEffect(() => {
+    console.log('Header component mounted');
+    
+    // Optional: You can add this to check if header is mounted twice
+    const headers = document.querySelectorAll('.amdo-main-header');
+    console.log(`Found ${headers.length} header elements with class 'amdo-main-header'`);
+  }, []);
 
   const navItems: NavItem[] = [
     { name: 'Home', href: '/' },
@@ -25,16 +34,16 @@ export default function Header(): React.ReactElement {
   ];
 
   return (
-    <header className="w-full py-4 px-6 bg-white relative z-50">
+    <header className="w-full py-4 px-6 bg-white relative z-50 amdo-main-header">
       <div className="max-w-7xl mx-auto">
         {/* Desktop Navigation */}
         <div className="flex justify-between items-center">
           <div className="flex items-center">
             <Image 
-              src="/Amdo Initiative logo.png"
+              src="/logo.png"
               alt="Amdo Initiative Logo"
-              width={100}
-              height={40}
+              width={120}
+              height={44.8}
               className="object-contain"
             />
           </div>
@@ -51,19 +60,19 @@ export default function Header(): React.ReactElement {
             )}
           </button>
 
-          <nav className="hidden lg:flex items-center space-x-6">
+          <nav className="hidden lg:flex items-center space-x-10">
             {navItems.map((item) => (
               <Link 
                 key={item.name} 
                 href={item.href}
-                className="text-black font-medium text-lg hover:text-gray-600 transition-colors duration-200"
+                className="text-black font-medium text-lg hover:text-gray-600 transition-colors duration-200 px-2"
               >
                 {item.name}
               </Link>
             ))}
             <Link 
               href="/donate" 
-              className="bg-[#2B9348] text-white px-6 py-2 rounded-md font-medium text-lg hover:bg-opacity-90 transition-colors duration-200"
+              className="bg-[#2B9348] text-white px-6 py-2 rounded-md font-medium text-lg hover:bg-opacity-90 transition-colors duration-200 ml-4"
             >
               Donate
             </Link>

@@ -1,7 +1,4 @@
-import type { ClassValue } from "clsx";
-import clsx from "clsx"; // changed named import to default import
-import { twMerge } from "tailwind-merge";
-
-export function cn(...inputs: ClassValue[]) { // added explicit type annotation
-  return twMerge(clsx(...inputs));
-}
+// Simple utility to merge class names
+export function cn(...inputs: (string | undefined | null | false)[]): string {
+    return inputs.filter(Boolean).join(' ');
+  }

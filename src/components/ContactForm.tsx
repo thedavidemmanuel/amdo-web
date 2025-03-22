@@ -2,7 +2,6 @@
 import React from 'react'
 import { Button } from "@/components/ui/Button"
 
-// ...existing code...
 export function ContactForm(): React.JSX.Element {
   return (
     <div className="w-full max-w-7xl mx-auto p-10 bg-gray-50">
@@ -18,12 +17,12 @@ export function ContactForm(): React.JSX.Element {
         </div>
 
         <form className="md:w-2/3 space-y-4">
-          <input type="text" placeholder="Your Name*" className="border p-2 rounded" />
-          <div className="grid grid-cols-2 gap-4">
-            <input type="email" placeholder="Email Address*" className="border p-2 rounded" />
-            <input type="tel" placeholder="Phone Number*" className="border p-2 rounded" />
+          <input type="text" placeholder="Your Name*" className="border p-2 rounded w-full" />
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+            <input type="email" placeholder="Email Address*" className="border p-2 rounded w-full" />
+            <input type="tel" placeholder="Phone Number*" className="border p-2 rounded w-full" />
           </div>
-          <textarea placeholder="Your Message" className="border p-2 rounded min-h-[150px]" />
+          <textarea placeholder="Your Message" className="border p-2 rounded min-h-[150px] w-full"></textarea>
           <Button className="bg-[#55A555] hover:bg-[#458545] text-white w-32 rounded-full">
             Send Message
           </Button>
@@ -48,4 +47,3 @@ export function ContactForm(): React.JSX.Element {
     </div>
   );
 }
-// ...existing code...
