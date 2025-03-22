@@ -1,7 +1,12 @@
 declare module "class-variance-authority" {
-	// Minimal declaration for cva: returns a function that computes class names.
-	export function cva(base: string, config?: any): (...args: any[]) => string;
+	// Function that computes class names based on variants
+	export function cva(
+		base: string, 
+		config?: Record<string, unknown>
+	): (props?: Record<string, unknown>) => string;
 
-	// Minimal definition for VariantProps: adds a variant property.
-	export type VariantProps<T> = T extends (...args: any[]) => string ? { variant?: string } : {};
+	// Type helper for extracting variant prop types
+	export type VariantProps<T> = T extends (
+		props?: infer P
+	) => string ? P : Record<string, never>;
 }
