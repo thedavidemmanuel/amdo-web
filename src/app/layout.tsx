@@ -6,7 +6,7 @@ import { Inter } from 'next/font/google';
 const inter = Inter({ subsets: ['latin'] });
 
 export const metadata: Metadata = {
-  title: 'Amdo Initiative | Building for Everyone',
+  title: 'Amdo Foundation | Building for Everyone',
   description: 'Empowering our community by developing its people, creating opportunities, and building lasting solutions that uplift every individual.',
   icons: {
     icon: '/favicon.png',
