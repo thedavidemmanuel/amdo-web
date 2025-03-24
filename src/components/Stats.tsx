@@ -32,59 +32,59 @@ export default function Stats() {
         {/* Mobile Layout - First Row */}
         <div className="grid grid-cols-3 gap-2 items-center mb-8 md:hidden">
           <div className="flex flex-col items-center p-4 col-span-1">
-            <p className="text-3xl font-medium mb-2 text-black">₦<AnimatedNumber value="500000" />+</p>
-            <p className="text-lg text-[#4B4B4B]">Fund Raised</p>
+            <p className="text-2xl font-medium mb-2 text-black">₦<AnimatedNumber value="500000" />+</p>
+            <p className="text-sm text-[#4B4B4B]">Fund Raised</p>
           </div>
           
           <div className="w-3 h-3 bg-[#F9A602] rounded-full justify-self-center"></div>
           
           <div className="flex flex-col items-center p-4 col-span-1">
-            <p className="text-3xl font-medium mb-2 text-black"><AnimatedNumber value="50" />+</p>
-            <p className="text-lg text-[#4B4B4B]">Volunteers</p>
+            <p className="text-2xl font-medium mb-2 text-black"><AnimatedNumber value="50" />+</p>
+            <p className="text-sm text-[#4B4B4B]">Volunteers</p>
           </div>
         </div>
 
         {/* Mobile Layout - Second Row */}
         <div className="grid grid-cols-3 gap-2 items-center md:hidden">
           <div className="flex flex-col items-center p-4 col-span-1">
-            <p className="text-3xl font-medium mb-2 text-black"><AnimatedNumber value="100" /></p>
-            <p className="text-lg text-[#4B4B4B]">Scholarships</p>
+            <p className="text-2xl font-medium mb-2 text-black"><AnimatedNumber value="100" /></p>
+            <p className="text-sm text-[#4B4B4B]">Scholarships</p>
           </div>
           
           <div className="w-3 h-3 bg-[#F9A602] rounded-full justify-self-center"></div>
           
           <div className="flex flex-col items-center p-4 col-span-1">
-            <p className="text-3xl font-medium mb-2 text-black"><AnimatedNumber value="24" /></p>
-            <p className="text-lg text-[#4B4B4B]">Workshops</p>
+            <p className="text-2xl font-medium mb-2 text-black"><AnimatedNumber value="24" /></p>
+            <p className="text-sm text-[#4B4B4B]">Workshops</p>
           </div>
         </div>
 
         {/* Desktop Layout */}
         <div className="hidden md:flex md:flex-row md:justify-between md:items-center md:w-full">
           <div className="flex flex-col items-center p-4">
-            <p className="text-3xl font-medium mb-2 text-black">₦<AnimatedNumber value="500000" />+</p>
-            <p className="text-lg text-[#4B4B4B]">Fund Raised</p>
+            <p className="text-2xl font-medium mb-2 text-black">₦<AnimatedNumber value="500000" />+</p>
+            <p className="text-base text-[#4B4B4B]">Fund Raised</p>
           </div>
 
           <div className="w-3 h-3 bg-[#F9A602] rounded-full"></div>
           
           <div className="flex flex-col items-center p-4">
-            <p className="text-3xl font-medium mb-2 text-black"><AnimatedNumber value="50" />+</p>
-            <p className="text-lg text-[#4B4B4B]">Volunteers</p>
+            <p className="text-2xl font-medium mb-2 text-black"><AnimatedNumber value="50" />+</p>
+            <p className="text-base text-[#4B4B4B]">Volunteers</p>
           </div>
 
           <div className="w-3 h-3 bg-[#F9A602] rounded-full"></div>
           
           <div className="flex flex-col items-center p-4">
-            <p className="text-3xl font-medium mb-2 text-black"><AnimatedNumber value="100" /></p>
-            <p className="text-lg text-[#4B4B4B]">Scholarships</p>
+            <p className="text-2xl font-medium mb-2 text-black"><AnimatedNumber value="100" /></p>
+            <p className="text-base text-[#4B4B4B]">Scholarships</p>
           </div>
 
           <div className="w-3 h-3 bg-[#F9A602] rounded-full"></div>
           
           <div className="flex flex-col items-center p-4">
-            <p className="text-3xl font-medium mb-2 text-black"><AnimatedNumber value="24" /></p>
-            <p className="text-lg text-[#4B4B4B]">Workshops</p>
+            <p className="text-2xl font-medium mb-2 text-black"><AnimatedNumber value="24" /></p>
+            <p className="text-base text-[#4B4B4B]">Workshops</p>
           </div>
         </div>
       </div>

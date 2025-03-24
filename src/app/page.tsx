@@ -103,10 +103,10 @@ export default function HomePage() {
         <div className="flex flex-col lg:flex-row items-center">
           <div className="lg:w-1/2 lg:pr-12">
             <h1 className="text-5xl text-black font-medium mb-6 leading-tight">
-              About <span className="text-[#2B9348]">Amdo Initiative</span>
+              About <span className="text-[#2B9348]">Amdo Foundation</span>
             </h1>
             <p className="text-gray-600 mb-8 max-w-[500px]">
-              The Amdo Initiative is committed to empowering individuals through education,
+              The Amdo Foundation is committed to empowering individuals through education,
               career development, entrepreneurship, and social well-being. By offering
               education and training programs, we aim to help people develop skills that will help
               them personally and professionally.

@@ -3,9 +3,16 @@
 import Image from 'next/image';
 import Link from 'next/link';
 
+/**
+ * Hero Component
+ * 
+ * Main landing section that showcases AMDO's mission with floating images
+ * Features responsive design with different layouts for mobile/tablet and desktop
+ */
 export default function Hero() {
   return (
     <>
+      {/* CSS for floating animation applied to hero images */}
       <style jsx global>{`
         @keyframes float {
           0%, 100% { transform: translateY(0); }
@@ -18,14 +25,16 @@ export default function Hero() {
 
       <main className="container mx-auto px-4 py-12 relative">
         <div className="flex flex-col lg:flex-row">
-          <div className="lg:w-1/2 pr-12 mt-39">
+          {/* Hero Text Content - Left side on desktop, top on mobile */}
+          <div className="lg:w-1/2 pr-12 mt-1 lg:mt-30">
             <h1 className="text-5xl font-medium mb-6 leading-tight text-black">
               <span className="block">Building For</span>
               <span className="block font-bold mt-2">Everyone</span>
             </h1>
-            <p className="text-base text-black mb-8 max-w-[500px]">
+            <p className="text-base text-black mb-8 max-w-[550px]">
               Empowering our community by developing its people, creating opportunities, and building lasting solutions that uplift every individual. Together, we shape a future where no one is left behind.
             </p>
+            {/* Call to Action Buttons */}
             <div className="space-x-4">
               <Link href="#" className="bg-white text-black px-6 py-3 rounded-lg border border-black text-xxl font-normal hover:bg-gray-100 transition-colors duration-300">
                 Learn More
@@ -36,8 +45,9 @@ export default function Hero() {
             </div>
           </div>
 
-          {/* Desktop Layout - Absolute Positioning */}
+          {/* Desktop Layout - Absolute Positioning for floating effect */}
           <div className="hidden lg:block w-1/2 absolute right-0 top-24 h-[700px]">
+            {/* Community member images with staggered animation delays */}
             <Image 
               src="https://res.cloudinary.com/djt0sncef/image/upload/v1742629608/hero-image-1_gje7xv.png"
               alt="Community member 1"
@@ -72,8 +82,9 @@ export default function Hero() {
             />
           </div>
 
-          {/* Mobile/Tablet Layout - Grid */}
+          {/* Mobile/Tablet Layout - Grid-based responsive design */}
           <div className="lg:hidden w-full mt-16 relative flex flex-wrap justify-center">
+            {/* Responsive 2x2 grid for smaller screens */}
             <div className="w-1/2 p-1">
               <Image 
                 src="https://res.cloudinary.com/djt0sncef/image/upload/v1742629608/hero-image-1_gje7xv.png"
