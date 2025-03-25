@@ -27,7 +27,7 @@ function AnimatedNumber({ value }: AnimatedNumberProps) {
 
 export default function Stats() {
   return (
-    <div className="container mx-auto px-4 mt-12 lg:mt-72 mb-20">
+    <div className="container mx-auto px-4 mt-12 lg:mt-50 mb-20">
       <div className="md:flex md:flex-row justify-between items-center bg-white max-w-5xl mx-auto">
         {/* Mobile Layout - First Row */}
         <div className="grid grid-cols-3 gap-2 items-center mb-8 md:hidden">
@@ -62,28 +62,28 @@ export default function Stats() {
         {/* Desktop Layout */}
         <div className="hidden md:flex md:flex-row md:justify-between md:items-center md:w-full">
           <div className="flex flex-col items-center p-4">
-            <p className="text-2xl font-medium mb-2 text-black">₦<AnimatedNumber value="500000" />+</p>
+            <p className="text-2xl font-medium mb-2 text-black">₦<AnimatedNumber value="600000" />+</p>
             <p className="text-base text-[#4B4B4B]">Fund Raised</p>
           </div>
 
           <div className="w-3 h-3 bg-[#F9A602] rounded-full"></div>
           
-          <div className="flex flex-col items-center p-4">
+          {/* <div className="flex flex-col items-center p-4">
             <p className="text-2xl font-medium mb-2 text-black"><AnimatedNumber value="50" />+</p>
             <p className="text-base text-[#4B4B4B]">Volunteers</p>
-          </div>
+          </div> */}
 
-          <div className="w-3 h-3 bg-[#F9A602] rounded-full"></div>
+          {/* <div className="w-3 h-3 bg-[#F9A602] rounded-full"></div> */}
           
           <div className="flex flex-col items-center p-4">
-            <p className="text-2xl font-medium mb-2 text-black"><AnimatedNumber value="100" /></p>
+            <p className="text-2xl font-medium mb-2 text-black"><AnimatedNumber value="14" /></p>
             <p className="text-base text-[#4B4B4B]">Scholarships</p>
           </div>
 
           <div className="w-3 h-3 bg-[#F9A602] rounded-full"></div>
           
           <div className="flex flex-col items-center p-4">
-            <p className="text-2xl font-medium mb-2 text-black"><AnimatedNumber value="24" /></p>
+            <p className="text-2xl font-medium mb-2 text-black"><AnimatedNumber value="10" /></p>
             <p className="text-base text-[#4B4B4B]">Workshops</p>
           </div>
         </div>
